@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11173.2" systemVersion="16A254g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11143.2"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Intent View Controller-->
+        <scene sceneID="7MM-of-jgj">
+            <objects>
+                <viewController id="ObA-dk-sSI" customClass="IntentViewController" customModule="BoTsonSiriExtensionUI" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qkL-Od-lgU"/>
+                        <viewControllerLayoutGuide type="bottom" id="n38-gi-rB5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zMn-AG-sqS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45U-6T-xWG">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="botson-small.png" translatesAutoresizingMaskIntoConstraints="NO" id="uaI-tN-rZg">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="4n5-4J-xDd"/>
+                                    <constraint firstAttribute="height" constant="70" id="wla-w2-n8h"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="n38-gi-rB5" firstAttribute="top" secondItem="45U-6T-xWG" secondAttribute="bottom" constant="20" id="8X9-Ji-XLy"/>
+                            <constraint firstAttribute="trailing" secondItem="uaI-tN-rZg" secondAttribute="trailing" constant="16" id="Ilc-Np-1zy"/>
+                            <constraint firstItem="45U-6T-xWG" firstAttribute="top" secondItem="qkL-Od-lgU" secondAttribute="bottom" id="PaN-Zn-CtG"/>
+                            <constraint firstItem="45U-6T-xWG" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leadingMargin" constant="20" id="WRp-JB-f47"/>
+                            <constraint firstItem="45U-6T-xWG" firstAttribute="trailing" secondItem="zMn-AG-sqS" secondAttribute="trailingMargin" constant="-20" id="hSW-74-Hwg"/>
+                            <constraint firstAttribute="bottom" secondItem="uaI-tN-rZg" secondAttribute="bottom" constant="20" id="pzj-uZ-46J"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="150"/>
+                    <connections>
+                        <outlet property="label" destination="45U-6T-xWG" id="ahQ-E0-tAb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.59999999999999" y="136.73163418290855"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="botson-small.png" width="150" height="150"/>
+    </resources>
+</document>

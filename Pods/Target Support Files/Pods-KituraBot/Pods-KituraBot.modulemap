@@ -1,0 +1,6 @@
+framework module Pods_KituraBot {
+  umbrella header "Pods-KituraBot-umbrella.h"
+
+  export *
+  module * { export * }
+}
