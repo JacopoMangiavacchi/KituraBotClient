@@ -1,9 +1,10 @@
 # KituraBotClient
 iOS 10 Swift Bot Messenger App: a mobile app channel for the KituraBot Swift Bot Framework supporting SiriKit, Notification, SFSpeechRecognizer and AVSpeechSynthesizer
 
-This iOS App allow to interact with KituraBot based multichannel Bot from Siri or from the Mobile App messenger like UX.
+This iOS App allows the user to interact with KituraBot based multichannel Bot from Siri or from the Mobile App messenger like UX.
 
-The Mobile App support iOS 10 new SFSpeechRecognizer API to implemnet a voice first interface.
+The Mobile App UX also support iOS 10 new SFSpeechRecognizer API to implemnet a voice first interface also within the App.
+
 
 **Warning: This is work in progress**
 
