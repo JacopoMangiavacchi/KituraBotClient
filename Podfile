@@ -5,5 +5,8 @@ use_frameworks!
 
 target 'KituraBot' do
  pod 'JSQMessagesViewController'
+ pod 'BMSCore'
+ pod 'BMSPush'
+ pod 'BMSAnalyticsAPI'
 end
 

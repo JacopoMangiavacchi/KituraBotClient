@@ -1,4 +1,10 @@
-/* Yi */
+//
+//  ChatViewController.swift
+//  KituraBot
+//
+//  Created by Jacopo Mangiavacchi on 10/3/16.
+//
+//
 
 import UIKit
 import JSQMessagesViewController
@@ -44,10 +50,12 @@ class ChatViewController: JSQMessagesViewController, SFSpeechRecognizerDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        senderId = "jacopo"
+        senderDisplayName = "Jacopo"
+        
         INPreferences.requestSiriAuthorization { (status) in
             // process status
         }
-        
         
         title = "KituraBot"
         setupBubbles()
@@ -62,10 +70,12 @@ class ChatViewController: JSQMessagesViewController, SFSpeechRecognizerDelegate 
     }
     
     func refresh() {
+        UIApplication.shared.applicationIconBadgeNumber = 0
+        
         if let lastNotificationResponse = KituraBotShared.getLastNotificationResponse() {
             addResponseMessage(responseText: lastNotificationResponse)
             
-            KituraBotShared.storeLastNotificationResponse(responseMessage: nil)
+            KituraBotShared.storeLastNotificationResponse(nil)
         }
     }
     
@@ -216,7 +226,7 @@ class ChatViewController: JSQMessagesViewController, SFSpeechRecognizerDelegate 
     
     
     @IBAction func startNewConversation(_ sender: AnyObject) {
-        KituraBotShared.storeContext(context: nil)
+        KituraBotShared.storeContext(nil)
 
         messages.removeAll()
         
@@ -324,8 +334,6 @@ class ChatViewController: JSQMessagesViewController, SFSpeechRecognizerDelegate 
         
         KituraBotShared.sendMesage(text: text) { (responseText) in
             self.addResponseMessage(responseText: responseText)
-            
-            //KituraBotShared.sendNotification(text: responseText)
         }
     }
 
@@ -380,10 +388,33 @@ extension ChatViewController : AVSpeechSynthesizerDelegate {
 
 extension ChatViewController:UNUserNotificationCenterDelegate{
 
+    private func extractMessage(fromPushNotificationUserInfo userInfo:[AnyHashable: Any]) -> String? {
+        var message: String?
+        if let aps = userInfo["aps"] as? NSDictionary {
+            if let alert = aps["alert"] as? NSDictionary {
+                if let alertMessage = alert["body"] as? String {
+                    message = alertMessage
+                }
+            }
+        }
+        return message
+    }
+    
 
-    private func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: () -> Void) {
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
 
-        //print("Tapped in notification \(response.actionIdentifier)")
+
+        
+        if let responseText = extractMessage(fromPushNotificationUserInfo: response.notification.request.content.userInfo) {
+            print("===> Add Message: \(responseText)")
+            self.addResponseMessage(responseText: responseText)
+        }
+        else {
+            print("Received notification with no body")
+        }
+        
         
         if let textAction = response as? UNTextInputNotificationResponse {
             //print("Text \(textAction.userText)")
@@ -394,19 +425,17 @@ extension ChatViewController:UNUserNotificationCenterDelegate{
         completionHandler()
     }
     
-    
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
 
-    private func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: (UNNotificationPresentationOptions) -> Void) {
-
-        print("Notification being triggered")
-        //You can either present alert ,sound or increase badge while the app is in foreground too with ios 10
-        //to distinguish between notifications
-        if notification.request.identifier == "KituraBotRequest" {
-
-            completionHandler( [.alert,.sound])
+        if let responseText = extractMessage(fromPushNotificationUserInfo: notification.request.content.userInfo) {
+            print("===> Add Message: \(responseText)")
+            self.addResponseMessage(responseText: responseText)
         }
-
+        else {
+            print("Received notification with no body")
+        }
     }
-
 }
 

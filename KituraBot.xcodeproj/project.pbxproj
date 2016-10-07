@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D34B7349BAFB126236855837 /* Pods_KituraBot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3EB5C8D9985D2DFBB68F86E /* Pods_KituraBot.framework */; };
+		EA1B6EFE1DA64E430049977C /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1B6EFD1DA64E430049977C /* NotificationService.swift */; };
+		EA1B6F021DA64E430049977C /* KituraBotNotificationExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = EA1B6EFB1DA64E430049977C /* KituraBotNotificationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		EA779F271DA2BEBE00CFE1DE /* KituraBotFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = EA779F251DA2BEBE00CFE1DE /* KituraBotFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA779F2A1DA2BEBE00CFE1DE /* KituraBotFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA779F231DA2BEBE00CFE1DE /* KituraBotFramework.framework */; };
 		EA779F2B1DA2BEBE00CFE1DE /* KituraBotFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EA779F231DA2BEBE00CFE1DE /* KituraBotFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -22,7 +24,6 @@
 		EA779F5C1DA2C0E200CFE1DE /* mic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA779F581DA2C0E200CFE1DE /* mic@2x.png */; };
 		EA779F5D1DA2C0E200CFE1DE /* mic@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA779F591DA2C0E200CFE1DE /* mic@3x.png */; };
 		EA779F611DA2C18900CFE1DE /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA779F5E1DA2C18900CFE1DE /* ChatViewController.swift */; };
-		EA779F621DA2C18900CFE1DE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA779F5F1DA2C18900CFE1DE /* LoginViewController.swift */; };
 		EA779F631DA2C18900CFE1DE /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA779F601DA2C18900CFE1DE /* Message.swift */; };
 		EA779F661DA2C28C00CFE1DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA779F641DA2C28C00CFE1DE /* Main.storyboard */; };
 		EA779F681DA2C37600CFE1DE /* KituraBotShared.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA779F671DA2C37600CFE1DE /* KituraBotShared.swift */; };
@@ -36,6 +37,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		EA1B6F001DA64E430049977C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EAAC9DF51DA2BE1F00E0C1DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EA1B6EFA1DA64E430049977C;
+			remoteInfo = KituraBotNotificationExtension;
+		};
 		EA779F281DA2BEBE00CFE1DE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = EAAC9DF51DA2BE1F00E0C1DC /* Project object */;
@@ -79,6 +87,7 @@
 			files = (
 				EA779F491DA2BEDF00CFE1DE /* KituraBotSiriExtensionUI.appex in Embed App Extensions */,
 				EA779F4C1DA2BEDF00CFE1DE /* KituraBotSiriExtension.appex in Embed App Extensions */,
+				EA1B6F021DA64E430049977C /* KituraBotNotificationExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,6 +98,9 @@
 		2FD671586766CC99DF336EC9 /* Pods-KituraBot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KituraBot.release.xcconfig"; path = "Pods/Target Support Files/Pods-KituraBot/Pods-KituraBot.release.xcconfig"; sourceTree = "<group>"; };
 		35F64B4DF5EA46B4A7318631 /* Pods-KituraBot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KituraBot.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KituraBot/Pods-KituraBot.debug.xcconfig"; sourceTree = "<group>"; };
 		B3EB5C8D9985D2DFBB68F86E /* Pods_KituraBot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KituraBot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA1B6EFB1DA64E430049977C /* KituraBotNotificationExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = KituraBotNotificationExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA1B6EFD1DA64E430049977C /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		EA1B6EFF1DA64E430049977C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA779F231DA2BEBE00CFE1DE /* KituraBotFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KituraBotFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA779F251DA2BEBE00CFE1DE /* KituraBotFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KituraBotFramework.h; sourceTree = "<group>"; };
 		EA779F261DA2BEBE00CFE1DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -106,7 +118,6 @@
 		EA779F581DA2C0E200CFE1DE /* mic@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mic@2x.png"; sourceTree = SOURCE_ROOT; };
 		EA779F591DA2C0E200CFE1DE /* mic@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mic@3x.png"; sourceTree = SOURCE_ROOT; };
 		EA779F5E1DA2C18900CFE1DE /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		EA779F5F1DA2C18900CFE1DE /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EA779F601DA2C18900CFE1DE /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		EA779F651DA2C28C00CFE1DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EA779F671DA2C37600CFE1DE /* KituraBotShared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KituraBotShared.swift; sourceTree = "<group>"; };
@@ -122,6 +133,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		EA1B6EF81DA64E430049977C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EA779F1F1DA2BEBE00CFE1DE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -176,6 +194,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		EA1B6EFC1DA64E430049977C /* KituraBotNotificationExtension */ = {
+			isa = PBXGroup;
+			children = (
+				EA1B6EFD1DA64E430049977C /* NotificationService.swift */,
+				EA1B6EFF1DA64E430049977C /* Info.plist */,
+			);
+			path = KituraBotNotificationExtension;
+			sourceTree = "<group>";
+		};
 		EA779F241DA2BEBE00CFE1DE /* KituraBotFramework */ = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +254,7 @@
 				EA779F241DA2BEBE00CFE1DE /* KituraBotFramework */,
 				EA779F351DA2BEDF00CFE1DE /* KituraBotSiriExtension */,
 				EA779F401DA2BEDF00CFE1DE /* KituraBotSiriExtensionUI */,
+				EA1B6EFC1DA64E430049977C /* KituraBotNotificationExtension */,
 				EAAC9DFE1DA2BE1F00E0C1DC /* Products */,
 				872AF1B8F886DDFCC205F261 /* Pods */,
 				8583010A62C45E703F06FCC9 /* Frameworks */,
@@ -240,6 +268,7 @@
 				EA779F231DA2BEBE00CFE1DE /* KituraBotFramework.framework */,
 				EA779F341DA2BEDF00CFE1DE /* KituraBotSiriExtension.appex */,
 				EA779F3D1DA2BEDF00CFE1DE /* KituraBotSiriExtensionUI.appex */,
+				EA1B6EFB1DA64E430049977C /* KituraBotNotificationExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -247,16 +276,15 @@
 		EAAC9DFF1DA2BE1F00E0C1DC /* KituraBot */ = {
 			isa = PBXGroup;
 			children = (
-				EA779F641DA2C28C00CFE1DE /* Main.storyboard */,
+				EAAC9E001DA2BE1F00E0C1DC /* AppDelegate.swift */,
 				EA779F5E1DA2C18900CFE1DE /* ChatViewController.swift */,
-				EA779F5F1DA2C18900CFE1DE /* LoginViewController.swift */,
 				EA779F601DA2C18900CFE1DE /* Message.swift */,
 				EA779F541DA2C0AE00CFE1DE /* KituraBot.entitlements */,
+				EA779F641DA2C28C00CFE1DE /* Main.storyboard */,
+				EAAC9E0C1DA2BE1F00E0C1DC /* Info.plist */,
 				EA779F551DA2C0BA00CFE1DE /* Images */,
-				EAAC9E001DA2BE1F00E0C1DC /* AppDelegate.swift */,
 				EAAC9E071DA2BE1F00E0C1DC /* Assets.xcassets */,
 				EAAC9E091DA2BE1F00E0C1DC /* LaunchScreen.storyboard */,
-				EAAC9E0C1DA2BE1F00E0C1DC /* Info.plist */,
 			);
 			path = KituraBot;
 			sourceTree = "<group>";
@@ -275,6 +303,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		EA1B6EFA1DA64E430049977C /* KituraBotNotificationExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA1B6F031DA64E430049977C /* Build configuration list for PBXNativeTarget "KituraBotNotificationExtension" */;
+			buildPhases = (
+				EA1B6EF71DA64E430049977C /* Sources */,
+				EA1B6EF81DA64E430049977C /* Frameworks */,
+				EA1B6EF91DA64E430049977C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KituraBotNotificationExtension;
+			productName = KituraBotNotificationExtension;
+			productReference = EA1B6EFB1DA64E430049977C /* KituraBotNotificationExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		EA779F221DA2BEBE00CFE1DE /* KituraBotFramework */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EA779F2E1DA2BEBE00CFE1DE /* Build configuration list for PBXNativeTarget "KituraBotFramework" */;
@@ -346,6 +391,7 @@
 				EA779F291DA2BEBE00CFE1DE /* PBXTargetDependency */,
 				EA779F481DA2BEDF00CFE1DE /* PBXTargetDependency */,
 				EA779F4B1DA2BEDF00CFE1DE /* PBXTargetDependency */,
+				EA1B6F011DA64E430049977C /* PBXTargetDependency */,
 			);
 			name = KituraBot;
 			productName = KituraBot;
@@ -362,6 +408,11 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Jacopo;
 				TargetAttributes = {
+					EA1B6EFA1DA64E430049977C = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = SV6W498A95;
+						ProvisioningStyle = Automatic;
+					};
 					EA779F221DA2BEBE00CFE1DE = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = SV6W498A95;
@@ -396,6 +447,12 @@
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
 							com.apple.Siri = {
 								enabled = 1;
 							};
@@ -420,11 +477,19 @@
 				EA779F221DA2BEBE00CFE1DE /* KituraBotFramework */,
 				EA779F331DA2BEDF00CFE1DE /* KituraBotSiriExtension */,
 				EA779F3C1DA2BEDF00CFE1DE /* KituraBotSiriExtensionUI */,
+				EA1B6EFA1DA64E430049977C /* KituraBotNotificationExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		EA1B6EF91DA64E430049977C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EA779F211DA2BEBE00CFE1DE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -513,6 +578,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		EA1B6EF71DA64E430049977C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA1B6EFE1DA64E430049977C /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EA779F1E1DA2BEBE00CFE1DE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -542,7 +615,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA779F621DA2C18900CFE1DE /* LoginViewController.swift in Sources */,
 				EA779F631DA2C18900CFE1DE /* Message.swift in Sources */,
 				EA779F611DA2C18900CFE1DE /* ChatViewController.swift in Sources */,
 				EAAC9E011DA2BE1F00E0C1DC /* AppDelegate.swift in Sources */,
@@ -552,6 +624,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		EA1B6F011DA64E430049977C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EA1B6EFA1DA64E430049977C /* KituraBotNotificationExtension */;
+			targetProxy = EA1B6F001DA64E430049977C /* PBXContainerItemProxy */;
+		};
 		EA779F291DA2BEBE00CFE1DE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = EA779F221DA2BEBE00CFE1DE /* KituraBotFramework */;
@@ -597,6 +674,32 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		EA1B6F041DA64E430049977C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = SV6W498A95;
+				INFOPLIST_FILE = KituraBotNotificationExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacopomangiavacchi.KituraBot.KituraBotNotificationExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		EA1B6F051DA64E430049977C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = SV6W498A95;
+				INFOPLIST_FILE = KituraBotNotificationExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jacopomangiavacchi.KituraBot.KituraBotNotificationExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		EA779F2C1DA2BEBE00CFE1DE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -830,6 +933,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		EA1B6F031DA64E430049977C /* Build configuration list for PBXNativeTarget "KituraBotNotificationExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA1B6F041DA64E430049977C /* Debug */,
+				EA1B6F051DA64E430049977C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EA779F2E1DA2BEBE00CFE1DE /* Build configuration list for PBXNativeTarget "KituraBotFramework" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

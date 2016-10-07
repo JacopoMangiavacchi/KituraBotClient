@@ -13,7 +13,28 @@ import UserNotifications
 
 public class KituraBotShared {
     
-    public static func storeContext(context: String?) {
+    public static func storeDeviceId(_ storeDeviceId: String?) {
+        if let groupDefaults = UserDefaults(suiteName: Configuration.sharedGroup) {
+            groupDefaults.set(storeDeviceId, forKey: "DeviceId")
+            groupDefaults.synchronize()
+        }
+        else {
+            print("ERROR Saving Group Default")
+        }
+    }
+
+    public static func getDeviceId() -> String? {
+        if let groupDefaults = UserDefaults(suiteName: Configuration.sharedGroup) {
+            return groupDefaults.string(forKey: "DeviceId")
+        }
+        else {
+            print("ERROR Loading Group Default")
+        }
+        return nil
+    }
+
+    
+    public static func storeContext(_ context: String?) {
         if let groupDefaults = UserDefaults(suiteName: Configuration.sharedGroup) {
             groupDefaults.set(context, forKey: "context")
             groupDefaults.synchronize()
@@ -33,7 +54,7 @@ public class KituraBotShared {
         return nil
     }
 
-    public static func storeLastNotificationResponse(responseMessage: String?) {
+    public static func storeLastNotificationResponse(_ responseMessage: String?) {
         if let groupDefaults = UserDefaults(suiteName: Configuration.sharedGroup) {
             groupDefaults.set(responseMessage, forKey: "lastNotificationResponse")
             groupDefaults.synchronize()
@@ -62,7 +83,10 @@ public class KituraBotShared {
         //    "securityToken" : "1234",
         //    "context" : {"a": 1, "b": "B"}
         //}
-        var jsonDictionary = ["senderID" : "123", "messageText" : text, "securityToken" : Configuration.mobileApiSecurityToken]
+        
+        let deviceId = getDeviceId() ?? ""
+        
+        var jsonDictionary = ["senderID" : deviceId, "messageText" : text, "securityToken" : Configuration.mobileApiSecurityToken]
         
         if let context = getContext() {
             jsonDictionary["context"] = context
@@ -105,7 +129,7 @@ public class KituraBotShared {
                     do {
                         let jsonContextData = try JSONSerialization.data(withJSONObject: jsonResponseContext, options: .prettyPrinted)
                         if let jsonDataString = NSString(data: jsonContextData, encoding: String.Encoding.utf8.rawValue) {
-                            KituraBotShared.storeContext(context: jsonDataString as String)
+                            KituraBotShared.storeContext(jsonDataString as String)
                         }
                     }
                     catch {
@@ -128,7 +152,7 @@ public class KituraBotShared {
     
     
     
-    public static func sendNotification(text: String) {
+    public static func sendLocalNotification(text: String) {
         //let action = UNNotificationAction(identifier:"reply", title:"Reply", options:[])
         let action = UNTextInputNotificationAction(
             identifier: "reply",

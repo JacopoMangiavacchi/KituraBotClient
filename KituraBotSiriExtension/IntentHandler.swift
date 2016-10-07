@@ -94,8 +94,8 @@ class IntentHandler: INExtension, INSendMessageIntentHandling, INSearchForMessag
         
         if let text = intent.content, !text.isEmpty {
             KituraBotShared.sendMesage(text: text, completion: { (responseText) in
-                KituraBotShared.storeLastNotificationResponse(responseMessage: responseText)
-                KituraBotShared.sendNotification(text: responseText)
+                KituraBotShared.storeLastNotificationResponse(responseText)
+                KituraBotShared.sendLocalNotification(text: responseText)
             })
             
             let response = INSendMessageIntentResponse(code: .success, userActivity: userActivity)

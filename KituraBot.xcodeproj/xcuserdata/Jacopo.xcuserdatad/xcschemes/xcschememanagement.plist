@@ -14,6 +14,11 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
+		<key>KituraBotNotificationExtension.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
 		<key>KituraBotSiriExtension.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -27,6 +32,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>EA1B6EFA1DA64E430049977C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>EA779F221DA2BEBE00CFE1DE</key>
 		<dict>
 			<key>primary</key>

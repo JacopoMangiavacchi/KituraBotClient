@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "182EF3695F86F93F13FFE5E5962AC6D5"
+               BlueprintIdentifier = "8A5CA6AD355CBA44BD81166989E9902A"
                BuildableName = "Pods_KituraBot.framework"
                BlueprintName = "Pods-KituraBot"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "182EF3695F86F93F13FFE5E5962AC6D5"
+            BlueprintIdentifier = "8A5CA6AD355CBA44BD81166989E9902A"
             BuildableName = "Pods_KituraBot.framework"
             BlueprintName = "Pods-KituraBot"
             ReferencedContainer = "container:Pods.xcodeproj">
