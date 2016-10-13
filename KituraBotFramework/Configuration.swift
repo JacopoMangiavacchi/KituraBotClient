@@ -17,6 +17,8 @@ public struct Configuration {
     // Token to use for verifing access to the Mobile API
     static let mobileApiSecurityToken = "1234"
 
+    static let mobileApiChannelName = "MobileAppEcho"
+
     // Bluemix Push configuration
     public static let bluemixRegion = ".ng.bluemix.net"
     public static let appGUID = "xxx"
