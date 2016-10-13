@@ -75,6 +75,18 @@ public class KituraBotShared {
         return nil
     }
     
+    private static func convertStringToDictionary(text: String) -> [String:AnyObject]? {
+        if let data = text.data(using: String.Encoding.utf8) {
+            do {
+                return try JSONSerialization.jsonObject(with: data, options: []) as? [String:AnyObject]
+            } catch let error as NSError {
+                print(error)
+            }
+        }
+        return nil
+    }
+    
+    
     public static func sendMesage(text: String, completion: @escaping (_ responseText: String) -> Void) {
 
         //{
@@ -86,10 +98,10 @@ public class KituraBotShared {
         
         let deviceId = getDeviceId() ?? ""
         
-        var jsonDictionary = ["senderID" : deviceId, "messageText" : text, "securityToken" : Configuration.mobileApiSecurityToken]
+        var jsonDictionary: [String:Any] = ["senderID" : deviceId, "messageText" : text, "securityToken" : Configuration.mobileApiSecurityToken]
         
         if let context = getContext() {
-            jsonDictionary["context"] = context
+            jsonDictionary["context"] = convertStringToDictionary(text: context)
         }
         
         let jsonData = try! JSONSerialization.data(withJSONObject: jsonDictionary, options: .prettyPrinted)
@@ -150,6 +162,28 @@ public class KituraBotShared {
         
     }
     
+    
+    public static func sendResetContextMesage() {
+        
+        //http://localhost:8090/message/channel/MobileAppEcho/user/1F82B348-0DD8-42A9-9ED1-80A6A060E784/reset/token/1234
+        
+        let deviceId = getDeviceId() ?? ""
+        
+        let url = URL(string: Configuration.resetUrl.replacingOccurrences(of: "[USER_ID]", with: deviceId))
+        let session = URLSession.shared
+        var request = URLRequest(url: url!, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 20.0)
+        
+        request.httpMethod = "GET"
+        
+        let task = session.dataTask(with: request) { (data, response, error) in
+            guard error == nil else {
+                print("error")
+                return
+            }
+        }
+        
+        task.resume()
+    }
     
     
     public static func sendLocalNotification(text: String) {
